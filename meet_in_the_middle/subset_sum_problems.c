@@ -124,7 +124,7 @@ void solve_using_mim_strategy(subset_sum_problem_t *problem)
 	u64 ** s2 = sums(ln2,a2);
     dt = elapsed_time();
 
-    printf("  preprocessing done in %.03fs\n",dt);
+    printf("  preprocessing done in %.09fs\n",dt);
     // Solve all problems for the value of n; place the solution in the array b
     for(i = 0; i < n_sums; i++)
 	{
@@ -141,7 +141,7 @@ void solve_using_mim_strategy(subset_sum_problem_t *problem)
             printf("  solved [");
             for(j = problem->n - 1; j >= 0; j--)
                 printf("%d",b[j]);
-            printf("] in %.03fs\n",dt);
+            printf("] in %.09fs\n",dt);
 	}
     // cleanup code
 	free(s1[0]);
@@ -152,6 +152,7 @@ void solve_using_mim_strategy(subset_sum_problem_t *problem)
 
 int main(void)
 {
+
     int i;
     for(i = 0; i < n_problems; i++)
         solve_using_mim_strategy(&subset_sum_problems[i]);
